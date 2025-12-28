@@ -22,7 +22,7 @@ class Connection
         }
     }
 
-        public function get_connection()
+        public function getConnection()
     {
         return $this->conn;
     }
