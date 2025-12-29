@@ -1,6 +1,8 @@
 <?php
 require_once 'Database/DatabaseConnection.php';
-$connect = new Connection();
+require_once 'Repository/ClientRepository.php';
+require_once 'Entity/Client.php';
+$connect = new DatabaseConnection();
 $pdo = $connect->getConnection();
 startApp($pdo);
 
@@ -32,6 +34,12 @@ function startApp($pdo)
                 exit(0);
 
             case '1':
+                echo "Enter name:";
+                $name = readline();
+                echo "\nEnter email:";
+                $email = readline();
+                $myClient = new Client($name,$email);
+                $clientRepo = new ClientRepository()->create($myClient);
                 break;
 
             default:

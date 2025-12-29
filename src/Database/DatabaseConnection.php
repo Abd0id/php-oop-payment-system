@@ -1,5 +1,5 @@
 <?php
-class Connection
+class DatabaseConnection
 {
     private PDO $conn;
     private string $host = "localhost";
